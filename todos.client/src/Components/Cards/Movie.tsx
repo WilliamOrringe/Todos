@@ -36,7 +36,7 @@ const MovieCard = ({
   data?: Record<string, any>;
 }) => {
   return (
-    <div className='relative group w-max rounded-md shadow-xl overflow-hidden'>
+    <div className='relative group w-max rounded-md shadow-xl bg-gray-800 overflow-hidden'>
       <img
         src={'data?.primaryImage?.url' || 'placeholder-url'}
         alt={data?.titleText.text}

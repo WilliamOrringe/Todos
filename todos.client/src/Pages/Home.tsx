@@ -17,6 +17,7 @@ function Home() {
           limit: '18',
           page,
         });
+        console.log(data);
         setMovieList((prevList) => [
           ...prevList,
           ...data.results,

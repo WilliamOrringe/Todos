@@ -1,3 +1,4 @@
+import movie_key from '../../config.json';
 class Api {
   baseURL: string;
   constructor(baseURL: string) {
@@ -18,8 +19,7 @@ class Api {
     const response = await fetch(url.toString(), {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key':
-          '',
+        'X-RapidAPI-Key': movie_key['movie-api'],
         'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
       },
     });
