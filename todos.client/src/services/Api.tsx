@@ -19,7 +19,7 @@ class Api {
       method: 'GET',
       headers: {
         'X-RapidAPI-Key':
-          'a24c46a778mshe140daf11de749ap1b1558jsn1c605a959282',
+          '',
         'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
       },
     });
