@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 [ApiController]
 public class UserController : ControllerBase
 {
-    private readonly YourDbContext _context;
+    private readonly MoviesListContext _context;
 
-    public UserController(YourDbContext context)
+    public UserController(MoviesListContext context)
     {
         _context = context;
     }

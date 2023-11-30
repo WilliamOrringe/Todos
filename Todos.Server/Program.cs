@@ -5,9 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<YourDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
+builder.Services.AddDbContext<MoviesListContext>(options =>
+                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MoviesList;Trusted_Connection=True;")
+                );
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -32,12 +33,4 @@ app.MapControllers();
 
 app.MapFallbackToFile("/index.html");
 
-app.Run(async context =>
-{
-    using var scope = app.Services.CreateScope();
-    var dbContext = scope.ServiceProvider.GetRequiredService<YourDbContext>();
-
-    // Your database operations here...
-
-    await context.Response.WriteAsync("Hello World!");
-});
+app.Run();
